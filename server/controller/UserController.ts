@@ -31,6 +31,16 @@ class UserController {
         }
     }
 
+    async getAllUsers(req: express.Request, res: express.Response) {
+        try {
+            const users = await UserService.getAllUsers();
+            return res.status(200).json(users)
+        } catch (error) {
+            console.log("error fetching all users");
+            return res.status(500).json({ error: "Internal Server Error" });
+        }
+    }
+
     async createUser(req:express.Request, res: express.Response) {
         try {
             await UserService.createUser(req.body)
