@@ -1,0 +1,33 @@
+{
+  "name": "final-proj",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000F\u0000I\u0000N\u0000A\u0000L\u0000-\u0000P\u0000R\u0000O\u0000J\u0000E\u0000C\u0000T\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sheriiiiii/FINAL-PROJECT.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sheriiiiii/FINAL-PROJECT/issues"
+  },
+  "homepage": "https://github.com/sheriiiiii/FINAL-PROJECT#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.12.12",
+    "prisma": "^5.14.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.14.0",
+    "@types/cors": "^2.8.17",
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}
