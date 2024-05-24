@@ -1,4 +1,5 @@
 import { PrismaClient } from "@prisma/client";
+import ApplicationService from "./ApplicationService";
 
 const prisma = new PrismaClient()
 
@@ -8,6 +9,11 @@ interface IUserInfo {
     email: string,
     password: string,
     type: string
+}
+
+interface IApplication {
+    user_id: string
+    applied_for: string
 }
 
 class UserService {
@@ -27,6 +33,11 @@ class UserService {
         return await prisma.user.findUnique({
             where: { email }
         })
+    }
+
+    async submitApplication(data: IApplication) {
+        const application = await ApplicationService.createApplication(data);
+        return application.id;
     }
 
     async editUserInfo(data: IUserInfo, user_id: string) {
