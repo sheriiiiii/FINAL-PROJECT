@@ -1,0 +1,36 @@
+
+.glassmorphism {
+    background: rgba(20, 1, 1, 0.273);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 5rem;
+    border-radius: 0.5rem;
+  }
+
+.signup-background{
+    background-image: url('../images/BACKGROUND.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex {
+    display: flex;
+  }
+  
+  .flex-col {
+    flex-direction: column;
+  }
+  
+  .items-center {
+    align-items: center;
+  }
+  
+  .mb-2 {
+    margin-bottom: 1.5rem; 
+  }
