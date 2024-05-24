@@ -41,14 +41,17 @@ class UserController {
         }
     }
 
-    async createUser(req:express.Request, res: express.Response) {
+    async applyForDistributor(req: express.Request, res: express.Response) {
+        const user_id = req.body.user_id
         try {
-            await UserService.createUser(req.body)
-            return res.status(200).json({message: "User has been created successfully"});
+            return await UserService.applyForDistributor(user_id)
         } catch (error) {
-            console.log("error in createUser: ", error)
-            return res.status(500).send({error: "Internal Server Error."});
+            return { "error": error }
         }
+    }
+
+    async applyForRetailer(req: express.Request, res: express.Response) {
+        console.log("TBA")
     }
 
     async getUserByEmail(req: express.Request, res: express.Response) {

@@ -35,9 +35,22 @@ class UserService {
         })
     }
 
-    async submitApplication(data: IApplication) {
-        const application = await ApplicationService.createApplication(data);
-        return application.id;
+    async applyForRetailer(user_id: string) {
+        const data = {
+          user_id: user_id,
+          applied_for: "retailer",
+        };
+        const response = await ApplicationService.createApplication(data);
+        return response;
+      }
+
+    async applyForDistributor(user_id: string) {
+        const data = {
+            user_id: user_id,
+            applied_for: "distributor"
+        };
+        const response = await ApplicationService.createApplication(data);
+        return response;
     }
 
     async editUserInfo(data: IUserInfo, user_id: string) {
