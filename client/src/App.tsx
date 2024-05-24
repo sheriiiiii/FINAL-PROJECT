@@ -1,22 +1,39 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-import AdminDashboard from './admin/AdminDashboard'
-import './App.css'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+//import React from 'react';
+import InfoPage from "./components/pages/InfoPage";
+import LogInPage from "./components/pages/LogInPage";
+import SignUpPage from "./components/pages/SignUpPage";
+import Homepage from './components/pages/Homepage'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
 
-function App() {
+/*const App: React.FC = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<InfoPage />} />
+        <Route path="/login" element={<LogInPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
+      </Routes>
+    </Router>
+  );
+};
+
+export default App;*/
+
+const App = () => {
   // const [count, setCount] = useState(0)
 
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/home' element={<AdminDashboard/>}/>
+          
+          
+          
         </Routes>
       </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
