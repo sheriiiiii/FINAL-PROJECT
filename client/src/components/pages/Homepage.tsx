@@ -2,21 +2,26 @@ import React from "react";
 //import ProtectedTemplate from "./ProtectedTemplate.tsx";
 import Sidebar from '../component/Sidebar.tsx';
 import '../styles/HomePage.css';
+import { PageHeader } from "../component/PageHeader.tsx";
 
 const HomePage: React.FC = () => {
-    return (
-      //<ProtectedTemplate>
-        <div className="flex min-h-screen">
-          <Sidebar />
-          <div className="flex-1 p-8">
-            <h1 className="text-4xl font-bold">Home</h1>
-          </div>
+  return (
+    // <ProtectedTemplate>
+    <div className="homepage-background flex flex-col min-h-screen">
+      <PageHeader />
+      <div className="flex flex-1">
+        <Sidebar />
+        <div className="flex-1 p-8 ml-64">
+          {/* Content of the home page goes here */}
         </div>
-      //</ProtectedTemplate>
-    );
-  };
-  
-  export default HomePage;
+      </div>
+    </div>
+    // </ProtectedTemplate>
+  );
+};
+
+export default HomePage;
+
 
 // const Homepage: React.FC = () => {
 //     return (
