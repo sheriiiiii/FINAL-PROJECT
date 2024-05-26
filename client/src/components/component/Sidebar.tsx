@@ -14,7 +14,7 @@ const Sidebar: React.FC = () => {
 
   return (
     <div className="sidebar">
-      <Link to="/" className="sidebar-link">
+      <Link to="/homepage" className="sidebar-link">
         <FontAwesomeIcon icon={faHome} className="sidebar-icon" />
         <span className="sidebar-text">Home</span>
       </Link>
