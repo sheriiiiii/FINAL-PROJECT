@@ -6,7 +6,7 @@ import { ClerkProvider } from "@clerk/clerk-react";
 import SignUpPage from "./components/pages/SignUpPage.tsx";
 import LogInPage from "./components/pages/LogInPage.tsx";
 import InfoPage from "./components/pages/InfoPage.tsx";
-import Homepage from "./components/pages/HomePage.tsx";
+import Homepage from "./components/pages/Homepage.tsx";
 import AllUsersPage from "./components/pages/AllUsersPage.tsx"; // New component
 import AddAUserPage from "./components/pages/AddAUserPage.tsx"; // New component
 //import ProtectedTemplate from "./components/pages/ProtectedTemplate";
