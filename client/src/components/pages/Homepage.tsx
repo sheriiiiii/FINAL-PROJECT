@@ -1,7 +1,7 @@
 import React from "react";
 //import ProtectedTemplate from "./ProtectedTemplate.tsx";
-import Sidebar from '../component/Sidebar.tsx';
-import '../styles/HomePage.css';
+import Sidebar from "../component/Sidebar.tsx";
+import "../styles/HomePage.css";
 import { PageHeader } from "../component/PageHeader.tsx";
 
 const HomePage: React.FC = () => {
@@ -21,7 +21,6 @@ const HomePage: React.FC = () => {
 };
 
 export default HomePage;
-
 
 // const Homepage: React.FC = () => {
 //     return (
