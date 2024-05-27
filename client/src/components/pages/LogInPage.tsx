@@ -1,7 +1,12 @@
 //import React from 'react';
+import { useNavigate } from "react-router-dom";
 import '../styles/LogInPage.css'; // Correct path
 
+
 const LogInPage = () => {
+
+  const navigate = useNavigate();
+
   return (
     <div className="login-background">
       <div className="w-full max-w-md glassmorphism">
@@ -36,12 +41,15 @@ const LogInPage = () => {
             >
               Log In
             </button>
-            <a
-              className="inline-block align-baseline text-sm text-white hover:text-gray-400"
-              href="#"
+            
+            <button
+              type="button"
+              className="inline-block align-baseline text-sm text-white hover:text-gray-400 mt-2"
+              onClick={() => navigate("/signup")}
             >
-              Forgot Password?
-            </a>
+              Don't have an account? Sign Up
+            </button>
+
           </div>
         </form>
       </div>
