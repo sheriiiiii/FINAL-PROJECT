@@ -10,7 +10,6 @@ const AllRetailersPage: React.FC = () => {
       <div className="flex flex-1">
         <DistributorSidebar />
         <div className="flex-1 p-8 ml-64">
-          <h1>Welcome, Distributor!</h1>
           {/* Distributor-specific content goes here */}
         </div>
       </div>
