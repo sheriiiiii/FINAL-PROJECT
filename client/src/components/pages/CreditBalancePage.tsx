@@ -2,6 +2,7 @@ import React from 'react';
 import RetailerSidebar from '../component/RetailerSidebar.tsx';
 import '../styles/HomePage.css';
 import { PageHeader } from "../component/PageHeader.tsx";
+import PurchaseCredit from '../component/PurchaseCredit.tsx';
 
 const CreditBalancePage: React.FC = () => {
   return (
@@ -10,8 +11,7 @@ const CreditBalancePage: React.FC = () => {
       <div className="flex flex-1">
         <RetailerSidebar />
         <div className="flex-1 p-8 ml-64">
-          <h1>Welcome, Retailer!</h1>
-          {/* Retailer-specific content goes here */}
+          <PurchaseCredit />
         </div>
       </div>
     </div>
