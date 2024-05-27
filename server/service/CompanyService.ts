@@ -1,4 +1,6 @@
 import { PrismaClient } from "@prisma/client";
+import RequestIMSI from "./RequestIMSI"
+import IMSIService from "./IMSIService";
 
 const prisma = new PrismaClient();
 
@@ -34,9 +36,23 @@ class CompanyService {
         })
     }
 
+    async seeDistributors() {
+        return await prisma.user.findMany({
+            where: {
+                type: "distributor"
+            }
+        })
+    }
+
     async addNewIMSI(data: IMSI) {
         return await prisma.iMSI.create({
             data
+        })
+    }
+
+    async getIMSIInformation(imsiID: string){
+        return await prisma.iMSI.findUnique({
+            where:{id: imsiID}
         })
     }
 
@@ -47,6 +63,22 @@ class CompanyService {
                 status
             }
         })
+    }
+
+    async getDistributorInfo(userId: string) {
+        return await prisma.user.findUnique({
+            where: {
+                id: userId
+            }
+        });
+    }
+
+    async approveRequest(id: string, user_id: string) {
+        let request = await RequestIMSI.getRequestbyid(id)
+        if(request){
+            await RequestIMSI.updateRequestStatus(id, 'approved');
+            IMSIService.addCredit(request.amount, user_id )
+        }
     }
 }
 

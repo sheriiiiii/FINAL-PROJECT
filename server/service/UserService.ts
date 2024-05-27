@@ -1,5 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import ApplicationService from "./ApplicationService";
+import RequestIMSI from "./RequestIMSI"
 
 const prisma = new PrismaClient()
 
@@ -35,9 +36,22 @@ class UserService {
         })
     }
 
-    async submitApplication(data: IApplication) {
-        const application = await ApplicationService.createApplication(data);
-        return application.id;
+    async applyForRetailer(user_id: string) {
+        const data = {
+          user_id: user_id,
+          applied_for: "retailer",
+        };
+        const response = await ApplicationService.createApplication(data);
+        return response;
+      }
+
+    async applyForDistributor(user_id: string) {
+        const data = {
+            user_id: user_id,
+            applied_for: "distributor"
+        };
+        const response = await ApplicationService.createApplication(data);
+        return response;
     }
 
     async editUserInfo(data: IUserInfo, user_id: string) {
@@ -72,6 +86,14 @@ class UserService {
         } catch (error) {
             console.error("register error: ", error);
             return { error: "error in registering new user" };
+        }
+    }
+
+    async requestLoad(amount: number, user_id: string){
+         try{
+            const requestIMSI = await RequestIMSI.createRequest(amount, user_id)
+        }catch(error){
+            return { error: "error in creating request" };
         }
     }
 }

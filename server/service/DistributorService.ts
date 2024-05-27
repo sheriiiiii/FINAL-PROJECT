@@ -22,10 +22,18 @@ class DistributorService {
         console.log("add functionalities here");
     }
 
-    async addRetailer(user_id: string) {
+    async acceptRetailerApplication(user_id: string) {
         return await prisma.user.update({
             where: { id: user_id },
             data: { type: "retailer" }
+        })
+    }
+
+    async getAllRetailer(){
+        return await prisma.user.findMany({
+            where: {
+                type: "Retailer"
+            }
         })
     }
 }

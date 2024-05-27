@@ -16,7 +16,7 @@ class UserController {
             return res.status(500).json({ error: "Internal Server Error" });
         }
     }
-
+ 
     async registerUser(req: express.Request, res: express.Response) {
         try {
             const user = UserService.register(req.body);
@@ -41,13 +41,21 @@ class UserController {
         }
     }
 
-    async createUser(req:express.Request, res: express.Response) {
+    async applyForDistributor(req: express.Request, res: express.Response) {
+        const user_id = req.body.user_id
         try {
-            await UserService.createUser(req.body)
-            return res.status(200).json({message: "User has been created successfully"});
+            return await UserService.applyForDistributor(user_id)
         } catch (error) {
-            console.log("error in createUser: ", error)
-            return res.status(500).send({error: "Internal Server Error."});
+            return { "error": error }
+        }
+    }
+
+    async applyForRetailer(req: express.Request, res: express.Response) {
+        const user_id = req.body.user_id
+        try{
+            return await UserService.applyForRetailer(user_id)
+        }catch(error){
+            return{"error": error}
         }
     }
 
