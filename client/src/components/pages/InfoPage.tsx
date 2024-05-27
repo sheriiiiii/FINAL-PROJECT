@@ -1,13 +1,19 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/InfoPage.css';
 
-const InfoPage = () => {
+const InfoPage: React.FC = () => {
   const [userType, setUserType] = useState('retailer');
+  const navigate = useNavigate();
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted');
+    // Redirect based on user type
+    if (userType === 'retailer') {
+      navigate('/retailer-homepage');
+    } else {
+      navigate('/distributor-homepage');
+    }
   };
 
   return (
@@ -66,3 +72,4 @@ const InfoPage = () => {
 };
 
 export default InfoPage;
+ 

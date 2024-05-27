@@ -1,10 +1,9 @@
-import React from "react";
-//import ProtectedTemplate from "./ProtectedTemplate.tsx";
-import Sidebar from "../component/Sidebar.tsx";
-import "../styles/HomePage.css";
+import React from 'react';
+import Sidebar from '../component/Sidebar.tsx';
+import '../styles/HomePage.css';
 import { PageHeader } from "../component/PageHeader.tsx";
 
-const HomePage: React.FC = () => {
+const AllUsersPage: React.FC = () => {
   return (
     // <ProtectedTemplate>
     <div className="homepage-background flex flex-col min-h-screen">
@@ -20,7 +19,12 @@ const HomePage: React.FC = () => {
   );
 };
 
-export default HomePage;
+export default AllUsersPage;
+
+
+
+
+
 
 // const Homepage: React.FC = () => {
 //     return (
