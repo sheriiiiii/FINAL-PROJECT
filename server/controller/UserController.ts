@@ -53,7 +53,8 @@ class UserController {
     async applyForRetailer(req: express.Request, res: express.Response) {
         const user_id = req.body.user_id
         try{
-            return await UserService.applyForRetailer(user_id)
+            const response = await UserService.applyForRetailer(user_id)
+            return res.status(200).json(response)
         }catch(error){
             return{"error": error}
         }
