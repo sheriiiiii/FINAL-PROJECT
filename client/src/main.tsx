@@ -49,6 +49,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
           <Route path="/manage-imsi-credits" element={<IMSICreditsPage />} /> 
           <Route path="/application-request" element={<ApplicationRequestPage />} /> 
           <Route path="/all-retailers" element={<AllRetailersPage />} /> 
+          <Route path="/" element={<SignUpPage />} />
+
          {/*<Route path="/edit-profile" element={<EditProfilePage />} />*/}
         </Routes>
       </BrowserRouter>
