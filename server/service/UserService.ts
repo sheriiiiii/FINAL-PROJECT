@@ -1,5 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import ApplicationService from "./ApplicationService";
+import RequestIMSI from "./RequestIMSI"
 
 const prisma = new PrismaClient()
 
@@ -85,6 +86,14 @@ class UserService {
         } catch (error) {
             console.error("register error: ", error);
             return { error: "error in registering new user" };
+        }
+    }
+
+    async requestLoad(amount: number, user_id: string){
+         try{
+            const requestIMSI = await RequestIMSI.createRequest(amount, user_id)
+        }catch(error){
+            return { error: "error in creating request" };
         }
     }
 }

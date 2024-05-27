@@ -16,7 +16,7 @@ class UserController {
             return res.status(500).json({ error: "Internal Server Error" });
         }
     }
-
+ 
     async registerUser(req: express.Request, res: express.Response) {
         try {
             const user = UserService.register(req.body);
@@ -51,7 +51,12 @@ class UserController {
     }
 
     async applyForRetailer(req: express.Request, res: express.Response) {
-        console.log("TBA")
+        const user_id = req.body.user_id
+        try{
+            return await UserService.applyForRetailer(user_id)
+        }catch(error){
+            return{"error": error}
+        }
     }
 
     async getUserByEmail(req: express.Request, res: express.Response) {

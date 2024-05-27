@@ -14,17 +14,18 @@ datasource db {
 }
 
 model User {
-  id          String        @id @unique @default(cuid())
+  id          String       @id @unique @default(cuid())
   fname       String
   lname       String
   birthdate   String?
-  email       String        @unique
+  email       String       @unique
   password    String
-  type        String        @default("user") // this can be of type: company, distributor, or retailer.
+  type        String       @default("user") // this can be of type: company, distributor, or retailer.
   Application Application?
   IMSI        IMSI?
   Wallet      Wallet?
   // add more attributes as needed.
+  Request     Request?
 }
 
 model Application {
@@ -40,7 +41,7 @@ model IMSI {
   number    String  @unique()
   user_id   String  @unique()
   user      User    @relation(fields: [user_id], references: [id])
-  credits   Int
+  credits   Int     @default(0)
   status    String
   isDeleted Boolean @default(false)
 }
@@ -50,4 +51,12 @@ model Wallet {
   user_id String @unique()
   user    User   @relation(fields: [user_id], references: [id])
   balance Int
+}
+
+model Request {
+  id      String @id @default(cuid())
+  user_id String @unique
+  user    User   @relation(fields: [user_id], references: [id])
+  amount  Int
+  status  String @default("waiting")
 }

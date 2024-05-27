@@ -12,5 +12,5 @@ class RetailerController {
         }
     }
 }
-
+ 
 export default new RetailerController();
