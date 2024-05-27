@@ -7,8 +7,11 @@ import SignUpPage from "./components/pages/SignUpPage.tsx";
 import LogInPage from "./components/pages/LogInPage.tsx";
 import InfoPage from "./components/pages/InfoPage.tsx";
 import Homepage from "./components/pages/Homepage.tsx";
-import AllUsersPage from "./components/pages/AllUsersPage.tsx"; // New component
-import AddAUserPage from "./components/pages/AddAUserPage.tsx"; // New component
+import AllUsersPage from "./components/pages/AllUsersPage.tsx"; 
+import AddAUserPage from "./components/pages/AddAUserPage.tsx"; 
+import RetailerHomePage from "./components/pages/RetailerHomepage.tsx";
+import DistributorHomePage from "./components/pages/DistributorHomepage.tsx";
+//import EditProfilePage from "./components/pages/EditProfilePage.tsx";
 //import ProtectedTemplate from "./components/pages/ProtectedTemplate";
 
 // Import your publishable key
@@ -36,6 +39,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
           />
           <Route path="/all-users" element={<AllUsersPage />} /> 
           <Route path="/add-user" element={<AddAUserPage />} /> 
+          <Route path="/retailer-homepage" element={<RetailerHomePage />} /> 
+          <Route path="/distributor-homepage" element={<DistributorHomePage />} /> 
+         {/*<Route path="/edit-profile" element={<EditProfilePage />} />*/}
         </Routes>
       </BrowserRouter>
     </ClerkProvider>
