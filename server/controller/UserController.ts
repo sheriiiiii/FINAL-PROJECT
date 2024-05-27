@@ -7,13 +7,13 @@ class UserController {
         try {
             const user = UserService.login(req.body);
             if ("error" in user) {
-                return user.error;
+                res.status(400).send(user.error);
             } else {
-                return user
+                res.status(201).send("Logged in") // note: send token to frontend for auth vaildation
             }
         } catch (error) {
             console.log("error in login");
-            return res.status(500).json({ error: "Internal Server Error" });
+            res.status(500).json({ error: "Internal Server Error" });
         }
     }
  
@@ -21,13 +21,13 @@ class UserController {
         try {
             const user = UserService.register(req.body);
             if ("error" in user) {
-                return user.error;
+                res.status(400).send(user.error)
             } else {
-                return user
+                res.status(200).send(user)
             }
         } catch (error) {
             console.log("error in login");
-            return res.status(500).json({ error: "Internal Server Error" });
+            res.status(500).json({ error: "Internal Server Error" });
         }
     }
 
@@ -42,11 +42,12 @@ class UserController {
     }
 
     async applyForDistributor(req: express.Request, res: express.Response) {
-        const user_id = req.body.user_id
+        const user_id = req.params.user_id
         try {
-            return await UserService.applyForDistributor(user_id)
+            await UserService.applyForDistributor(user_id)
+            res.status(200).send("successfully applied for distributor")
         } catch (error) {
-            return { "error": error }
+            res.status(500).json({ "error": error });
         }
     }
 
