@@ -13,6 +13,10 @@ import RetailerHomePage from "./components/pages/RetailerHomepage.tsx";
 import DistributorHomePage from "./components/pages/DistributorHomepage.tsx";
 //import EditProfilePage from "./components/pages/EditProfilePage.tsx";
 //import ProtectedTemplate from "./components/pages/ProtectedTemplate";
+import CreditBalancePage from "./components/pages/CreditBalancePage.tsx";
+import IMSICreditsPage from "./components/pages/IMSICreditsPage.tsx";
+import ApplicationRequestPage from "./components/pages/ApplicationRequestPage.tsx";
+import AllRetailersPage from "./components/pages/AllRetailersPage.tsx";
 
 // Import your publishable key
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
@@ -41,6 +45,10 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
           <Route path="/add-user" element={<AddAUserPage />} /> 
           <Route path="/retailer-homepage" element={<RetailerHomePage />} /> 
           <Route path="/distributor-homepage" element={<DistributorHomePage />} /> 
+          <Route path="/pay-credit-balance" element={<CreditBalancePage />} /> 
+          <Route path="/manage-imsi-credits" element={<IMSICreditsPage />} /> 
+          <Route path="/application-request" element={<ApplicationRequestPage />} /> 
+          <Route path="/all-retailers" element={<AllRetailersPage />} /> 
          {/*<Route path="/edit-profile" element={<EditProfilePage />} />*/}
         </Routes>
       </BrowserRouter>
